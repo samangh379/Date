@@ -1,0 +1,30 @@
+.container {
+    display: flex;
+    justify-content: center;
+    margin: 150px auto;
+    width: 75%;
+    background-color: #f9f9f9;
+    border: 10px solid rgb(161, 173, 210);
+    border-radius: 15px;
+
+    height: 450px;
+}
+
+.infoContainer {
+    margin-top: 70px;
+}
+
+.infoContainer input {
+    margin: 5px;
+}
+
+input {
+    width: 350px;
+    border: none;
+    height: 40px;
+    border: 5px;
+}
+
+form button {
+    margin: 5px;
+}
