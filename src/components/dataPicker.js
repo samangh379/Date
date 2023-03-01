@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import styles from "./DataPicker.module.css";
-import ReactDatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
+import DatePicker from "react-multi-date-picker";
+import persian from "react-date-object/calendars/persian";
+import persian_fa from "react-date-object/locales/persian_fa";
+
 const DataPicker = () => {
     const [name, setName] = useState("");
     const [password, setPassword] = useState("");
-    const [selectedDate, setselectedDate] = useState(null);
+    const [selectedDate, setselectedDate] = useState(new Date());
 
     const nameChanger = (e) => {
         setName(([e.target.name] = e.target.value));
@@ -45,15 +47,7 @@ const DataPicker = () => {
                         <input type="text" name="password" placeholder="password" onChange={passChanger} />
                     </div>
                     <div className="date">
-                        <ReactDatePicker
-                            selected={selectedDate}
-                            onChange={(date) => setselectedDate(date)}
-                            dateFormat="yyyy/mm/dd"
-                            isClearable
-                            showYearDropdown
-                            scrollableMonthYearDropdown
-                            placeholderText="Birthday"
-                        />
+                        <DatePicker value={selectedDate} onChange={setselectedDate} locale={persian_fa} calendar={persian} />
                     </div>
                 </div>
                 <button type="submit" onClick={subimtHandler}>
